@@ -1,0 +1,29 @@
+<html xmlns:th="https://www.thymeleaf.org">
+	<body>
+		<p> Studentu info: </p>
+		
+		<table>
+			<tr th:each="stud : ${innerObj}">
+				<td th:text="${stud.getId()}" > </td>
+				<td th:text="${stud.getName()}"> </td>
+				<td th:text="${stud.getSurname()}"   > </td>
+				<td th:text="${stud.toString()}"   > </td>
+		
+			</tr>
+		</table>
+		
+			<form action="#" th:action="@{/studentRemove}" method="post" th:object="${student}">
+		<table>
+				
+			<tr>
+				<td>Lūdzu ievadiet studenta uzvārdu, kuru vēlaties dzēst </td>
+				<td> <input type="text" th:field="*{surname}"> </td>	
+			</tr>
+		
+		</table>
+		
+		<button type="submit"> Dzēst! </button>
+		</form>
+		
+	</body>
+</html>

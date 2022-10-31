@@ -1,0 +1,16 @@
+<html xmlns:th="https://www.thymeleaf.org">
+	<body>
+		<p> Studentu info: </p>
+		
+		<table>
+			<tr th:each="stud : ${innerObj}">
+				<td th:text="${stud.getId()}" > </td>
+				<td th:text="${stud.getName()}"> </td>
+				<td th:text="${stud.getSurname()}"   > </td>
+				<td th:text="${stud.toString()}"   > </td>
+		
+			</tr>
+		</table>
+		
+	</body>
+</html>
